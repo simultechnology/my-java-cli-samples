@@ -8,13 +8,13 @@ class ShiftCipherTest {
 
     @Test
     void encrypt() {
-        assertEquals("khoor", ShiftCipher.encrypt("hello"));
-        assertEquals("bhdu", ShiftCipher.encrypt("year"));
+        assertEquals("khoor", ShiftCipher.encrypt("hello", 3));
+        assertEquals("bhdu", ShiftCipher.encrypt("year", 3));
     }
 
     @Test
     void decrypt() {
-        assertEquals("hello", ShiftCipher.decrypt("khoor"));
-        assertEquals("year", ShiftCipher.decrypt("bhdu"));
+        assertEquals("hello", ShiftCipher.decrypt("khoor", 3));
+        assertEquals("year", ShiftCipher.decrypt("bhdu", 3));
     }
 }
