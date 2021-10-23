@@ -1,3 +1,5 @@
+import com.simultechnology.ShiftCipher;
+
 import java.util.Scanner;
 
 public class Main {
@@ -6,7 +8,8 @@ public class Main {
         System.out.println("start");
         Scanner scanner = new Scanner(System.in);
         System.out.println("please input");
-        String encryptedWord = scanner.next();
-
+        String targetWord = scanner.next();
+        String encryptedWord = ShiftCipher.encrypt(targetWord);
+        System.out.println(encryptedWord);
     }
 }

@@ -8,16 +8,16 @@ public class ShiftCipher {
 
     static private final String ALPHABET = "abcdefghijklmnopqrstuvwxyz";
 
-    public static String decrypt(String encryptedWord) {
+    public static String encrypt(String plainWord) {
 
         String[] alphabets = ALPHABET.split("");
-        String[] targetLetters = encryptedWord.split("");
+        String[] targetLetters = plainWord.split("");
 
-        List<String> stringStream = Arrays.stream(targetLetters).map(letter -> {
+        List<String> encryptedList = Arrays.stream(targetLetters).map(letter -> {
             int index = ALPHABET.indexOf(letter) + 3;
             return alphabets[index % alphabets.length];
         }).collect(Collectors.toList());
 
-        return String.join("", stringStream);
+        return String.join("", encryptedList);
     }
 }

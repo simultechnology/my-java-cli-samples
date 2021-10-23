@@ -5,7 +5,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class ShiftCipherTest {
 
     @org.junit.jupiter.api.Test
-    void decrypt() {
-        assertEquals("khoor", ShiftCipher.decrypt("hello"));
+    void encrypt() {
+        assertEquals("khoor", ShiftCipher.encrypt("hello"));
     }
 }
