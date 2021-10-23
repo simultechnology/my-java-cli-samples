@@ -13,24 +13,24 @@ public class ShiftCipher {
 
         String[] targetLetters = plainWord.split("");
 
-        List<String> encryptedList = Arrays.stream(targetLetters).map(letter -> {
+        String[] encryptedLetters = Arrays.stream(targetLetters).map(letter -> {
             int index = ALPHABET.indexOf(letter) + 3;
             return ALPHABET_LETTERS[index % ALPHABET_LETTERS.length];
-        }).collect(Collectors.toList());
+        }).toArray(String[]::new);
 
-        return String.join("", encryptedList);
+        return String.join("", encryptedLetters);
     }
 
     public static String decrypt(String encryptedWord) {
 
         String[] targetLetters = encryptedWord.split("");
 
-        List<String> plainList = Arrays.stream(targetLetters).map(letter -> {
+        String[] plainLetters = Arrays.stream(targetLetters).map(letter -> {
             int index = (ALPHABET.indexOf(letter) - 3) + ALPHABET_LETTERS.length;
             return ALPHABET_LETTERS[index % ALPHABET_LETTERS.length];
-        }).collect(Collectors.toList());
+        }).toArray(String[]::new);
 
-        return String.join("", plainList);
+        return String.join("", plainLetters);
     }
 
 }
